@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%= category.name %> - Movie Inventory</title>
+		<link rel="stylesheet" href="/styles.css" />
+	</head>
+	<body>
+		<%-include('./partials/header.ejs') %>
+
+		<main>
+			<div class="top">
+				<h2><%= category.name %> Movies</h2>
+				<a href="/categories/<%= category.id  %>/edit">Edit category</a>
+				<form action="/categories/<%= category.id %>/delete" method="POST">
+					<button type="submit">Delete category</button>
+				</form>
+				<a href="/categories/<%= category.id  %>/movies/add">Add movie</a>
+			</div>
+			 <div class="grid">
+      <% movies.forEach(movie => { %>
+        <a class="card" href="/movies/<%= movie.id %>">
+          <h3><%= movie.title %></h3>
+          <p class="year"><%= movie.year %></p>
+          <p><%= movie.description %></p>
+        </a>
+      <% }) %>
+    </div>
+		</main>
+	</body>
+</html>

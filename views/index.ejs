@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%= title %></title>
+		<link rel="stylesheet" href="/styles.css">
+	</head>
+	<body>
+	<%-include('./partials/header.ejs')  %>
+
+  <main>
+    <div class="top">
+      <h2>Browse by Genre</h2>
+      <a href="/categories/add">Add category</a>
+  </div>
+    <div class="grid">
+      <% categories.forEach(category => { %>
+        <a href="/categories/<%= category.id %>" class="card">
+          <h3><%= category.name %></h3>
+        </a>
+      <% }) %>
+    </div>
+  </main>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Add Category - Movie Inventory</title>
+		<link rel="stylesheet" href="/styles.css" />
+	</head>
+	<body>
+		<%-include('./partials/header.ejs') %>
+
+		<main>
+			<h2>Add new category</h2>
+			<form class="submit-form" action="/categories/add" method="POST">
+				<div class="form-control">
+					<label for="name"> Name </label>
+					<input type="text" id="name" name="name" required />
+				</div>
+				<button>Submit</button>
+			</form>
+		</main>
+	</body>
+</html>
